@@ -5,7 +5,7 @@ trimesh==5.1.0
 numpy==2.4.4
 scipy==1.17.1
 matplotlib==3.10.9
-networkx==3.6.1
+networkx==3.7
 # manufacturing data (tools/build_mfg.py); also needs Graphviz: sudo apt install graphviz
 wireviz==0.4.1
 PyYAML==6.0.3
