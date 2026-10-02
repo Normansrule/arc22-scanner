@@ -1,6 +1,6 @@
 # CAD pipeline (tested versions; install with: python -m pip install -r cad/requirements.txt)
 cadquery==2.8.0
-cadquery-ocp==7.9.3.1.1
+cadquery-ocp==8.0.1.0.0
 trimesh==5.1.0
 numpy==2.4.4
 scipy==1.17.1
