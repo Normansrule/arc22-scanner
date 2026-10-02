@@ -4,7 +4,7 @@ cadquery-ocp==7.9.3.1.1
 trimesh==5.1.0
 numpy==2.4.4
 scipy==1.17.1
-matplotlib==3.10.9
+matplotlib==3.11.2
 networkx==3.6.1
 # manufacturing data (tools/build_mfg.py); also needs Graphviz: sudo apt install graphviz
 wireviz==0.4.1
