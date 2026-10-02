@@ -1,0 +1,79 @@
+# Static checks + the full CAD pipeline on every push / pull request.
+# Actions are pinned by full commit SHA (supply-chain rule, docs/SECURITY.md); Dependabot bumps them.
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  static:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+      - name: Byte-compile helper scripts
+        run: python -m compileall -q tools cad
+      - name: Firmware static checks (pins, sdkconfig, version pins, secrets)
+        run: python tools/verify_project.py
+      - name: Manufacturing data consistent (BOM, connections vs firmware pin map)
+        run: |
+          python -m pip install PyYAML==6.0.3 matplotlib==3.10.9
+          python tools/build_mfg.py --no-render
+      - name: No credentials committed
+        run: |
+          if git ls-files | grep -E '(^|/)(\.env|secrets\.h)$'; then echo "credentials committed"; exit 1; fi
+  app:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - name: Web app data present and parseable
+        run: |
+          for f in docs/app/models/index.json docs/app/data/*.json docs/app/manifest.webmanifest; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" && echo "ok $f"; done
+          node -e "const m=require('./docs/app/models/index.json');const fs=require('fs');for(const x of m.meshes){if(!fs.existsSync('docs/app/models/'+x.file))throw new Error('missing '+x.file)}console.log(m.meshes.length,'meshes ok')"
+      - name: Desktop app installs from the lockfile and packages (unpacked)
+        working-directory: app
+        run: |
+          npm ci --no-audit --no-fund
+          node copy-web.js
+          npx electron-builder --linux --dir --publish never
+  cad:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+      - name: Install CAD pipeline (pinned) + Graphviz
+        run: |
+          sudo apt-get update && sudo apt-get install -y graphviz
+          python -m pip install -r cad/requirements.txt
+      - name: Build + recorded CAD checks
+        run: |
+          python cad/build_arc22.py
+          python cad/validate_arc22.py
+      - name: Export + mesh checks + fit samples + manufacturing package
+        run: |
+          python cad/export_arc22.py
+          python cad/fit_samples_arc22.py
+          python tools/build_mfg.py --package
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: cad-checks-and-manufacturing
+          path: |
+            docs/validation/
+            dist/arc22-manufacturing-*.zip

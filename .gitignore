@@ -1,0 +1,26 @@
+# secrets — never commit
+.env
+firmware/main/secrets.h
+firmware/sdkconfig
+firmware/sdkconfig.old
+# firmware build + downloaded dependencies (fetched during setup; no binaries shipped)
+firmware/build/
+firmware/managed_components/
+firmware/dependencies.lock
+firmware/components/LovyanGFX/
+firmware/components/ArduCAM/
+firmware/components/FETCHED.json
+firmware/.cache/
+# CAD caches (regenerate with scripts/rebuild_all.sh)
+cad/build/
+__pycache__/
+*.pyc
+# your personal measurements stay local unless you choose to share them
+measurements/my_units.toml
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.venv/
+dist/

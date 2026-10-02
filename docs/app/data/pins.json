@@ -1,0 +1,77 @@
+[
+ {
+  "name": "PIN_CAM_SDA",
+  "gpio": 4,
+  "note": "I2C data  (sensor registers)"
+ },
+ {
+  "name": "PIN_CAM_SCL",
+  "gpio": 5,
+  "note": "I2C clock"
+ },
+ {
+  "name": "PIN_CAM_CS",
+  "gpio": 15,
+  "note": "SPI chip select (10 kOhm pull-up to 3V3)"
+ },
+ {
+  "name": "PIN_CAM_MISO",
+  "gpio": 16,
+  "note": "camera -> ESP32"
+ },
+ {
+  "name": "PIN_CAM_MOSI",
+  "gpio": 17,
+  "note": "ESP32 -> camera"
+ },
+ {
+  "name": "PIN_CAM_SCLK",
+  "gpio": 18,
+  "note": "SPI clock"
+ },
+ {
+  "name": "PIN_TFT_BL",
+  "gpio": 6,
+  "note": "backlight control ONLY on a driver-equipped display (Kconfig)"
+ },
+ {
+  "name": "PIN_TFT_RST",
+  "gpio": 7,
+  "note": "TFT RESET"
+ },
+ {
+  "name": "PIN_TFT_DC",
+  "gpio": 8,
+  "note": "TFT DC/RS"
+ },
+ {
+  "name": "PIN_TOUCH_CS",
+  "gpio": 9,
+  "note": "touch T_CS (10 kOhm pull-up to 3V3)"
+ },
+ {
+  "name": "PIN_TFT_CS",
+  "gpio": 10,
+  "note": "TFT CS     (10 kOhm pull-up to 3V3)"
+ },
+ {
+  "name": "PIN_TFT_MOSI",
+  "gpio": 11,
+  "note": "TFT MOSI + touch T_DIN (shared)"
+ },
+ {
+  "name": "PIN_TFT_SCLK",
+  "gpio": 12,
+  "note": "TFT SCK  + touch T_CLK (shared)"
+ },
+ {
+  "name": "PIN_TOUCH_MISO",
+  "gpio": 13,
+  "note": "touch T_DO -> ESP32 (TFT MISO/SDO stays unconnected)"
+ },
+ {
+  "name": "PIN_TOUCH_IRQ",
+  "gpio": 14,
+  "note": "touch T_IRQ -> ESP32"
+ }
+]

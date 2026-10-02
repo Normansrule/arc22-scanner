@@ -1,0 +1,67 @@
+# ARC-22 connectors and splices. Pin order = the order on the physical header.
+# VERIFY every header against the silkscreen of YOUR board before crimping or plugging.
+# Read by tools/build_mfg.py together with connections.csv.
+ESP32:
+  type: ESP32-S3-N16R8 dev board (DevKitC-1 layout), header J1
+  subtype: male 2.54 mm header, pin 22 at the USB end
+  pinlabels: [3V3, 3V3, RST, GPIO4, GPIO5, GPIO6, GPIO7, GPIO15, GPIO16, GPIO17, GPIO18, GPIO8, GPIO3, GPIO46, GPIO9, GPIO10, GPIO11, GPIO12, GPIO13, GPIO14, 5V, GND]
+  notes: All GPIO are 3.3 V logic. Only header J1 is used; J3 stays free.
+TFT:
+  type: Hosyond 4.0" ST7796S + XPT2046 (MSP4021-style)
+  subtype: male 2.54 mm header
+  pinlabels: [VCC, GND, CS, RESET, DC/RS, SDI(MOSI), SCK, LED, SDO(MISO), T_CLK, T_CS, T_DIN, T_DO, T_IRQ]
+  notes: SDO(MISO) and the SD-card pins stay unconnected.
+CAM:
+  type: Arducam Mini / Mini Plus OV2640 2MP (SPI + I2C)
+  subtype: male 2.54 mm header
+  pinlabels: [CS, MOSI, MISO, SCK, GND, VCC, SDA, SCL]
+PU1:
+  type: pull-up tee, TFT CS
+  subtype: 10 kOhm to 3V3, soldered + heat-shrunk
+  pinlabels: [IN, OUT, 3V3]
+PU2:
+  type: pull-up tee, touch T_CS
+  subtype: 10 kOhm to 3V3, soldered + heat-shrunk
+  pinlabels: [IN, OUT, 3V3]
+PU3:
+  type: pull-up tee, camera CS
+  subtype: 10 kOhm to 3V3, soldered + heat-shrunk
+  pinlabels: [IN, OUT, 3V3]
+YMOSI:
+  type: Y-splice, shared MOSI
+  subtype: soldered + heat-shrunk
+  pinlabels: [IN, A, B]
+YSCK:
+  type: Y-splice, shared SCK
+  subtype: soldered + heat-shrunk
+  pinlabels: [IN, A, B]
+B3V3:
+  type: 3V3 distribution splice
+  subtype: soldered + heat-shrunk, fed ONLY by the ESP32 3V3 pin
+  pinlabels: [ESP32, PU1, PU3, PU2, CAM]
+B5V:
+  type: 5 V distribution splice
+  subtype: 22 AWG in, soldered + heat-shrunk
+  pinlabels: [RUN, ESP32, TFT, SPARE]
+BGND:
+  type: ground distribution splice
+  subtype: 22 AWG in, soldered + heat-shrunk
+  pinlabels: [RUN, ESP32, TFT, CAM]
+RUN:
+  type: RUN pigtail (removable)
+  subtype: keyed 2-pin JST-XH pair; unplug before programming
+  pinlabels: [5V, GND]
+CHG:
+  type: "Adafruit #6106 bq25185 charger + 5 V boost"
+  subtype: JST-PH battery input, screw terminal 5 V output, EN pad
+  pinlabels: [BAT+, BAT-, 5V+, 5V-, EN, GND]
+  notes: Charge through THIS board's USB-C. EN low = 5 V output off.
+BAT:
+  type: "protected 1S 3.7 V 4400 mAh Li-ion (Adafruit #354)"
+  subtype: factory JST-PH 2-pin lead
+  pinlabels: [+, '-']
+BTN:
+  type: 12 mm latching push button (SPST)
+  subtype: solder lugs
+  pinlabels: [A, B]
+  notes: Closed = charger output OFF; open = ON.

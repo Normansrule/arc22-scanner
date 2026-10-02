@@ -1,0 +1,13 @@
+# GitHub Pages (Jekyll) — the site is built from this /docs folder on main.
+title: ARC-22 FitFirst
+description: Subnautica-style handheld scanner — two-shell print, local ESP32-S3 object detection, step-by-step build
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-titles-from-headings
+relative_links:
+  enabled: true
+  collections: false
+exclude:
+  - validation/*.json

@@ -1,0 +1,67 @@
+{
+  "name": "arc22-studio",
+  "productName": "ARC-22 Studio",
+  "version": "0.1.0",
+  "description": "ARC-22 scanner build companion: 3D model, measurements, wiring, build progress and CAD checks.",
+  "author": "Aleksander Norman",
+  "license": "MIT",
+  "homepage": "https://github.com/Normansrule/arc22-scanner",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Normansrule/arc22-scanner.git"
+  },
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "web": "node copy-web.js",
+    "start": "node copy-web.js && electron .",
+    "dist": "node copy-web.js && electron-builder --publish never",
+    "dist:linux": "node copy-web.js && electron-builder --linux AppImage deb --publish never",
+    "dist:win": "node copy-web.js && electron-builder --win nsis portable --publish never",
+    "dist:mac": "node copy-web.js && electron-builder --mac dmg zip --publish never"
+  },
+  "devDependencies": {
+    "electron": "44.5.1",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "io.github.arc22.studio",
+    "productName": "ARC-22 Studio",
+    "artifactName": "ARC-22-Studio-${version}-${os}-${arch}.${ext}",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "web/**/*",
+      "build/icon.png",
+      "package.json"
+    ],
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Development",
+      "maintainer": "Aleksander Norman"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.developer-tools"
+    }
+  }
+}

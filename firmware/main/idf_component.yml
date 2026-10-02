@@ -1,0 +1,6 @@
+## ESP-IDF Component Manager manifest — versions pinned (see ../PINNED_VERSIONS.json)
+dependencies:
+  idf: "5.4.2"
+  espressif/arduino-esp32: "3.2.1"
+  espressif/esp-dl: "3.3.6"
+  espressif/coco_detect: "0.4.0"

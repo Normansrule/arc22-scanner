@@ -1,0 +1,45 @@
+{
+  "all_pass": true,
+  "meshes": [
+    {
+      "file": "ARC22_LEFT_WHITE.stl",
+      "triangles": 15948,
+      "watertight": true,
+      "winding_consistent": true,
+      "bodies": 1,
+      "mesh_cm3": 243.55,
+      "brep_cm3": 243.77,
+      "volume_error_pct": 0.09
+    },
+    {
+      "file": "ARC22_LEFT_BLUE.stl",
+      "triangles": 4204,
+      "watertight": true,
+      "winding_consistent": true,
+      "bodies": 4,
+      "mesh_cm3": 30.84,
+      "brep_cm3": 30.97,
+      "volume_error_pct": 0.417
+    },
+    {
+      "file": "ARC22_RIGHT_WHITE.stl",
+      "triangles": 14704,
+      "watertight": true,
+      "winding_consistent": true,
+      "bodies": 1,
+      "mesh_cm3": 236.58,
+      "brep_cm3": 236.89,
+      "volume_error_pct": 0.129
+    },
+    {
+      "file": "ARC22_RIGHT_BLUE.stl",
+      "triangles": 4680,
+      "watertight": true,
+      "winding_consistent": true,
+      "bodies": 4,
+      "mesh_cm3": 30.4,
+      "brep_cm3": 30.53,
+      "volume_error_pct": 0.413
+    }
+  ]
+}

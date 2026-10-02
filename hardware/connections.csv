@@ -1,0 +1,41 @@
+wire,group,from,from_pin,to,to_pin,signal,colour,awg,length_mm,note
+1,camera,ESP32,GPIO15,PU3,IN,CAM_CS,VT,26,60,camera chip select
+2,camera,PU3,OUT,CAM,CS,CAM_CS,VT,26,200,
+3,camera,PU3,3V3,B3V3,PU3,3V3,OG,26,60,10 kOhm pull-up leg
+4,camera,ESP32,GPIO17,CAM,MOSI,CAM_MOSI,BU,26,220,
+5,camera,ESP32,GPIO16,CAM,MISO,CAM_MISO,GN,26,220,
+6,camera,ESP32,GPIO18,CAM,SCK,CAM_SCLK,YE,26,220,
+7,camera,ESP32,GPIO4,CAM,SDA,CAM_SDA,BN,26,220,I2C data; add 4.7 kOhm to 3V3 only if the camera has none
+8,camera,ESP32,GPIO5,CAM,SCL,CAM_SCL,WH,26,220,I2C clock
+9,camera,B3V3,CAM,CAM,VCC,3V3,OG,24,220,or 5 V from B5V.SPARE if your camera has its own regulator (WIRING.md)
+10,camera,BGND,CAM,CAM,GND,GND,BK,24,220,
+11,display,ESP32,GPIO10,PU1,IN,TFT_CS,VT,26,60,display chip select
+12,display,PU1,OUT,TFT,CS,TFT_CS,VT,26,180,
+13,display,PU1,3V3,B3V3,PU1,3V3,OG,26,60,10 kOhm pull-up leg
+14,display,ESP32,GPIO9,PU2,IN,TOUCH_CS,GY,26,60,touch chip select
+15,display,PU2,OUT,TFT,T_CS,TOUCH_CS,GY,26,180,
+16,display,PU2,3V3,B3V3,PU2,3V3,OG,26,60,10 kOhm pull-up leg
+17,display,ESP32,GPIO7,TFT,RESET,TFT_RST,WH,26,200,
+18,display,ESP32,GPIO8,TFT,DC/RS,TFT_DC,PK,26,200,
+19,display,ESP32,GPIO11,YMOSI,IN,MOSI,BU,26,80,shared by display and touch
+20,display,YMOSI,A,TFT,SDI(MOSI),MOSI,BU,26,150,
+21,display,YMOSI,B,TFT,T_DIN,MOSI,BU,26,150,
+22,display,ESP32,GPIO12,YSCK,IN,SCK,YE,26,80,shared by display and touch
+23,display,YSCK,A,TFT,SCK,SCK,YE,26,150,
+24,display,YSCK,B,TFT,T_CLK,SCK,YE,26,150,
+25,display,ESP32,GPIO13,TFT,T_DO,TOUCH_MISO,GN,26,200,the only device driving GPIO13
+26,display,ESP32,GPIO14,TFT,T_IRQ,TOUCH_IRQ,LB,26,200,
+27,display,ESP32,GPIO6,TFT,LED,TFT_BL,TQ,26,200,OPTIONAL: only on a display with a backlight driver
+28,display,B5V,TFT,TFT,VCC,5V,RD,24,200,verify your display accepts 5 V (else use 3V3)
+29,display,BGND,TFT,TFT,GND,GND,BK,24,200,
+30,esp32,ESP32,3V3,B3V3,ESP32,3V3,OG,24,80,ESP32 regulator output; never feed 3V3 from elsewhere
+31,esp32,ESP32,5V,B5V,ESP32,5V,RD,22,80,
+32,esp32,ESP32,GND,BGND,ESP32,GND,BK,22,80,
+33,power,BAT,+,CHG,BAT+,VBAT,RD,factory,0,factory battery lead into the charger JST
+34,power,BAT,-,CHG,BAT-,GND,BK,factory,0,
+35,power,CHG,5V+,RUN,5V,5V,RD,22,120,
+36,power,CHG,5V-,RUN,GND,GND,BK,22,120,
+37,power,RUN,5V,B5V,RUN,5V,RD,22,150,
+38,power,RUN,GND,BGND,RUN,GND,BK,22,150,
+39,power,CHG,EN,BTN,A,EN,WH,24,120,charger enable (not ESP32 EN)
+40,power,BTN,B,CHG,GND,GND,BK,24,120,

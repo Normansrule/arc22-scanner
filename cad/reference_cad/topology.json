@@ -1,0 +1,71 @@
+{
+  "nodes": {
+    "display": [
+      14.9,
+      0.0,
+      134.0
+    ],
+    "camera": [
+      185.9,
+      0.0,
+      169.0
+    ],
+    "esp32": [
+      95.8,
+      -43.2,
+      140.0
+    ],
+    "battery": [
+      170.5,
+      0.0,
+      76.5
+    ],
+    "charger": [
+      13.6,
+      -5.0,
+      50.8
+    ],
+    "button": [
+      11.4,
+      -13.0,
+      67.0
+    ],
+    "run_pigtail": [
+      40.0,
+      -10.0,
+      70.0
+    ]
+  },
+  "links": [
+    {
+      "a": "camera",
+      "b": "esp32",
+      "signals": "SPI (CS, MOSI, MISO, SCLK) + I2C (SDA, SCL) + VCC + GND"
+    },
+    {
+      "a": "esp32",
+      "b": "display",
+      "signals": "SPI (CS, DC, RESET, MOSI, SCK) + touch (T_CS, T_DIN, T_CLK, T_DO, T_IRQ) + BL + VCC + GND"
+    },
+    {
+      "a": "battery",
+      "b": "charger",
+      "signals": "BATT (JST, factory leads)"
+    },
+    {
+      "a": "charger",
+      "b": "run_pigtail",
+      "signals": "5V output"
+    },
+    {
+      "a": "run_pigtail",
+      "b": "esp32",
+      "signals": "system 5V + GND"
+    },
+    {
+      "a": "button",
+      "b": "charger",
+      "signals": "EN to GND (closed = output off)"
+    }
+  ]
+}

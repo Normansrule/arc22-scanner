@@ -1,0 +1,141 @@
+{
+ "units": "mm",
+ "coordinates": "assembly: X front-back (0 = rear face), Y width (seam Y=0, LEFT<0), Z up",
+ "meshes": [
+  {
+   "file": "LEFT_WHITE.stl",
+   "layer": "shells",
+   "side": "LEFT",
+   "label": "Left shell, white",
+   "colour": "#eef2f4",
+   "triangles": 12224
+  },
+  {
+   "file": "LEFT_BLUE.stl",
+   "layer": "shells",
+   "side": "LEFT",
+   "label": "Left shell, blue",
+   "colour": "#1a9fdb",
+   "triangles": 3298
+  },
+  {
+   "file": "RIGHT_WHITE.stl",
+   "layer": "shells",
+   "side": "RIGHT",
+   "label": "Right shell, white",
+   "colour": "#eef2f4",
+   "triangles": 11126
+  },
+  {
+   "file": "RIGHT_BLUE.stl",
+   "layer": "shells",
+   "side": "RIGHT",
+   "label": "Right shell, blue",
+   "colour": "#1a9fdb",
+   "triangles": 3736
+  },
+  {
+   "file": "mod_display.stl",
+   "layer": "modules",
+   "module": "display",
+   "label": "Display + touch (ST7796S / XPT2046)",
+   "colour": "#20262e",
+   "triangles": 76
+  },
+  {
+   "file": "field_display.stl",
+   "layer": "fields",
+   "module": "display",
+   "label": "Reserved space: display",
+   "colour": "#e39b2d",
+   "triangles": 88
+  },
+  {
+   "file": "mod_camera.stl",
+   "layer": "modules",
+   "module": "camera",
+   "label": "Camera (Arducam Mini OV2640)",
+   "colour": "#2c7a4b",
+   "triangles": 280
+  },
+  {
+   "file": "field_camera.stl",
+   "layer": "fields",
+   "module": "camera",
+   "label": "Reserved space: camera",
+   "colour": "#e39b2d",
+   "triangles": 276
+  },
+  {
+   "file": "mod_esp32.stl",
+   "layer": "modules",
+   "module": "esp32",
+   "label": "ESP32-S3-N16R8",
+   "colour": "#244f8c",
+   "triangles": 124
+  },
+  {
+   "file": "field_esp32.stl",
+   "layer": "fields",
+   "module": "esp32",
+   "label": "Reserved space: esp32",
+   "colour": "#e39b2d",
+   "triangles": 64
+  },
+  {
+   "file": "mod_battery.stl",
+   "layer": "modules",
+   "module": "battery",
+   "label": "Battery 1S 4400 mAh",
+   "colour": "#6b6f7a",
+   "triangles": 12
+  },
+  {
+   "file": "field_battery.stl",
+   "layer": "fields",
+   "module": "battery",
+   "label": "Reserved space: battery",
+   "colour": "#e39b2d",
+   "triangles": 12
+  },
+  {
+   "file": "mod_charger.stl",
+   "layer": "modules",
+   "module": "charger",
+   "label": "Charger + 5 V boost (#6106)",
+   "colour": "#86357a",
+   "triangles": 76
+  },
+  {
+   "file": "field_charger.stl",
+   "layer": "fields",
+   "module": "charger",
+   "label": "Reserved space: charger",
+   "colour": "#e39b2d",
+   "triangles": 440
+  },
+  {
+   "file": "mod_button.stl",
+   "layer": "modules",
+   "module": "button",
+   "label": "Latching power button",
+   "colour": "#b8bec6",
+   "triangles": 404
+  },
+  {
+   "file": "field_button.stl",
+   "layer": "fields",
+   "module": "button",
+   "label": "Reserved space: button",
+   "colour": "#e39b2d",
+   "triangles": 12
+  },
+  {
+   "file": "routes.stl",
+   "layer": "routes",
+   "label": "Cable routes",
+   "colour": "#d8662a",
+   "triangles": 2495
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+menu "ARC-22 scanner"
+
+    config ARC_COMMISSION_CAPTURE_ONLY
+        bool "Commissioning mode: display, touch and camera only (no inference)"
+        default y
+        help
+            Build stage 4 of docs/BUILD_GUIDE.md. Verify the display, touch calibration,
+            camera image and orientation first. Only then turn this off (stage 5) to
+            enable the local object detector.
+
+    config ARC_BACKLIGHT_GPIO_ENABLED
+        bool "Drive the TFT backlight from GPIO6 (only if your display has a backlight driver)"
+        default n
+        help
+            Enable ONLY after you have verified that the display's LED/BL pin goes to a
+            transistor driver, not straight to the LEDs. Enables the DIM control.
+
+    config ARC_LCD_ROTATION
+        int "LCD rotation (0-7, LovyanGFX setRotation)"
+        range 0 7
+        default 0
+
+    config ARC_CAM_FLIP_180
+        bool "Rotate the camera image by 180 degrees (sensor flip registers, VERIFY)"
+        default n
+
+    config ARC_SCORE_THRESHOLD_PCT
+        int "Detection score threshold (percent)"
+        range 5 95
+        default 35
+
+    config ARC_MAX_DETECTIONS
+        int "Maximum detections shown"
+        range 1 8
+        default 8
+
+    config ARC_CAMERA_SPI_HZ
+        int "Camera SPI clock (Hz)"
+        range 1000000 8000000
+        default 4000000
+
+    config ARC_WIKI_LANG
+        string "Wikipedia language code"
+        default "en"
+
+endmenu

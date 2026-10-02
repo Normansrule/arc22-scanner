@@ -1,0 +1,60 @@
+# Real firmware build logs (source present != compiled). Runs in Espressif's official
+# ESP-IDF 5.4.2 container; the component manager downloads arduino-esp32 3.2.1,
+# esp-dl 3.3.6, coco_detect 0.4.0 and the model during the build.
+name: firmware
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["firmware/**", "tools/**", ".github/workflows/firmware.yml"]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    # Tag-pinned container. For stricter pinning replace with the image digest (docs/SECURITY.md).
+    container: espressif/idf:v5.4.2
+    strategy:
+      fail-fast: false
+      matrix:
+        camera: [plus, mini]
+        stage: [commission, inference]
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - name: Fetch pinned git components
+        shell: bash
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          python tools/fetch_libraries.py --camera ${{ matrix.camera }}
+      - name: Select stage
+        if: matrix.stage == 'inference'
+        shell: bash
+        run: sed -i 's/CONFIG_ARC_COMMISSION_CAPTURE_ONLY=y/CONFIG_ARC_COMMISSION_CAPTURE_ONLY=n/' firmware/sdkconfig.defaults
+      - name: Build
+        shell: bash
+        working-directory: firmware
+        run: |
+          . $IDF_PATH/export.sh
+          idf.py set-target esp32s3
+          idf.py build 2>&1 | tee build.log
+          test ${PIPESTATUS[0]} -eq 0
+      - name: Verify build
+        shell: bash
+        run: |
+          . $IDF_PATH/export.sh
+          python tools/verify_project.py --after-build | tee firmware/verify.log
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: firmware-${{ matrix.camera }}-${{ matrix.stage }}
+          path: |
+            firmware/build.log
+            firmware/verify.log
+            firmware/dependencies.lock
+            firmware/build/*.bin
+            firmware/build/bootloader/bootloader.bin
+            firmware/build/partition_table/partition-table.bin
+            firmware/build/espdl_models/coco_detect.espdl
+            firmware/build/flasher_args.json

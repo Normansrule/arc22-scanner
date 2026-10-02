@@ -1,0 +1,608 @@
+{
+ "measured": [
+  {
+   "key": "DISP_PCB_W",
+   "group": "Display",
+   "label": "Display PCB width (short side)",
+   "nominal": 61.74,
+   "current": 61.74,
+   "source": "MSP4021 reference drawing (short side, becomes Y)",
+   "verify": true
+  },
+  {
+   "key": "DISP_PCB_H",
+   "group": "Display",
+   "label": "Display PCB height (long side)",
+   "nominal": 108.04,
+   "current": 108.04,
+   "source": "MSP4021 reference drawing (long side, becomes Z)",
+   "verify": true
+  },
+  {
+   "key": "DISP_PCB_T",
+   "group": "Display",
+   "label": "Display PCB thickness",
+   "nominal": 1.6,
+   "current": 1.6,
+   "source": "calipers on bare PCB edge",
+   "verify": true
+  },
+  {
+   "key": "DISP_ACTIVE_W",
+   "group": "Display",
+   "label": "Lit area width",
+   "nominal": 55.68,
+   "current": 55.68,
+   "source": "MSP4021 reference active area",
+   "verify": true
+  },
+  {
+   "key": "DISP_ACTIVE_H",
+   "group": "Display",
+   "label": "Lit area height",
+   "nominal": 83.52,
+   "current": 83.52,
+   "source": "MSP4021 reference active area",
+   "verify": true
+  },
+  {
+   "key": "DISP_ACTIVE_OFF_Z",
+   "group": "Display",
+   "label": "Lit area offset along the long side",
+   "nominal": 4.0,
+   "current": 4.0,
+   "source": "active-area centre minus PCB centre, +Z = away from header",
+   "verify": true
+  },
+  {
+   "key": "DISP_ACTIVE_OFF_Y",
+   "group": "Display",
+   "label": "Lit area offset across",
+   "nominal": 0.0,
+   "current": 0.0,
+   "source": "measure on your part",
+   "verify": true
+  },
+  {
+   "key": "DISP_GLASS_W",
+   "group": "Display",
+   "label": "Glass width",
+   "nominal": 61.0,
+   "current": 61.0,
+   "source": "outer glass/touch-film width",
+   "verify": true
+  },
+  {
+   "key": "DISP_GLASS_H",
+   "group": "Display",
+   "label": "Glass height",
+   "nominal": 97.0,
+   "current": 97.0,
+   "source": "outer glass/touch-film height",
+   "verify": true
+  },
+  {
+   "key": "DISP_GLASS_OFF_Z",
+   "group": "Display",
+   "label": "Glass offset along the long side",
+   "nominal": 2.5,
+   "current": 2.5,
+   "source": "glass centre minus PCB centre, +Z = away from header",
+   "verify": true
+  },
+  {
+   "key": "DISP_GLASS_STACK",
+   "group": "Display",
+   "label": "PCB front to glass front",
+   "nominal": 4.6,
+   "current": 4.6,
+   "source": "PCB front face to glass front face",
+   "verify": true
+  },
+  {
+   "key": "DISP_BACK_POP",
+   "group": "Display",
+   "label": "Tallest part on the back (not the header)",
+   "nominal": 4.0,
+   "current": 4.0,
+   "source": "tallest part on PCB back (SD slot etc.), excluding header",
+   "verify": true
+  },
+  {
+   "key": "DISP_HDR_SPACER",
+   "group": "Display",
+   "label": "Header spacer height",
+   "nominal": 2.5,
+   "current": 2.5,
+   "source": "header plastic spacer height on PCB back",
+   "verify": true
+  },
+  {
+   "key": "DISP_HDR_PINS",
+   "group": "Display",
+   "label": "Header pin count",
+   "nominal": 14,
+   "current": 14.0,
+   "source": "pin count of the display header",
+   "verify": true
+  },
+  {
+   "key": "DISP_HDR_INSET",
+   "group": "Display",
+   "label": "Header row to PCB edge",
+   "nominal": 3.0,
+   "current": 3.0,
+   "source": "header row centre distance from its PCB edge",
+   "verify": true
+  },
+  {
+   "key": "DISP_BARE_SIDE",
+   "group": "Display",
+   "label": "Bare strip at the long edges",
+   "nominal": 5.0,
+   "current": 5.0,
+   "source": "bare strip width inward from each long PCB edge at the corners",
+   "verify": true
+  },
+  {
+   "key": "DISP_BARE_END_HDR",
+   "group": "Display",
+   "label": "Bare length at the header end",
+   "nominal": 6.0,
+   "current": 6.0,
+   "source": "bare PCB length at the header end (front face, beyond glass)",
+   "verify": true
+  },
+  {
+   "key": "DISP_BARE_END_FAR",
+   "group": "Display",
+   "label": "Bare length at the far end",
+   "nominal": 2.5,
+   "current": 2.5,
+   "source": "bare PCB length at the far end (front face, beyond glass)",
+   "verify": true
+  },
+  {
+   "key": "CAM_PCB_W",
+   "group": "Camera",
+   "label": "Camera PCB width",
+   "nominal": 24.4,
+   "current": 24.4,
+   "source": "ARC22 assumption (Y)",
+   "verify": true
+  },
+  {
+   "key": "CAM_PCB_H",
+   "group": "Camera",
+   "label": "Camera PCB height",
+   "nominal": 34.1,
+   "current": 34.1,
+   "source": "ARC22 assumption (Z)",
+   "verify": true
+  },
+  {
+   "key": "CAM_PCB_T",
+   "group": "Camera",
+   "label": "Camera PCB thickness",
+   "nominal": 1.6,
+   "current": 1.6,
+   "source": "measure on your part",
+   "verify": true
+  },
+  {
+   "key": "CAM_HOLDER_SQ",
+   "group": "Camera",
+   "label": "Lens holder base",
+   "nominal": 14.5,
+   "current": 14.5,
+   "source": "S-mount (M12) holder base square",
+   "verify": true
+  },
+  {
+   "key": "CAM_LENS_D",
+   "group": "Camera",
+   "label": "Lens barrel diameter",
+   "nominal": 14.0,
+   "current": 14.0,
+   "source": "lens barrel outer diameter at the front",
+   "verify": true
+  },
+  {
+   "key": "CAM_LENS_PROJ",
+   "group": "Camera",
+   "label": "PCB front to lens front",
+   "nominal": 20.0,
+   "current": 20.0,
+   "source": "PCB front face to lens front",
+   "verify": true
+  },
+  {
+   "key": "CAM_OPT_OFF_Z",
+   "group": "Camera",
+   "label": "Lens centre offset (vertical)",
+   "nominal": 3.0,
+   "current": 3.0,
+   "source": "optical centre minus PCB centre, +Z = away from header",
+   "verify": true
+  },
+  {
+   "key": "CAM_OPT_OFF_Y",
+   "group": "Camera",
+   "label": "Lens centre offset (sideways)",
+   "nominal": 0.0,
+   "current": 0.0,
+   "source": "measure on your part",
+   "verify": true
+  },
+  {
+   "key": "CAM_BACK_POP",
+   "group": "Camera",
+   "label": "Tallest part on the back",
+   "nominal": 3.0,
+   "current": 3.0,
+   "source": "tallest part on camera PCB back",
+   "verify": true
+  },
+  {
+   "key": "CAM_HDR_INSET",
+   "group": "Camera",
+   "label": "Header row to bottom edge",
+   "nominal": 2.0,
+   "current": 2.0,
+   "source": "header row centre distance from bottom PCB edge",
+   "verify": true
+  },
+  {
+   "key": "CAM_BARE_CORNER",
+   "group": "Camera",
+   "label": "Bare square at each corner",
+   "nominal": 4.0,
+   "current": 4.0,
+   "source": "bare square at each PCB corner (no parts, both faces)",
+   "verify": true
+  },
+  {
+   "key": "CAM_HDR_PINS",
+   "group": "Camera",
+   "label": "Header pin count",
+   "nominal": 8,
+   "current": 8.0,
+   "source": "CS MOSI MISO SCLK GND VCC SDA SCL",
+   "verify": false
+  },
+  {
+   "key": "ESP_L",
+   "group": "ESP32-S3 board",
+   "label": "Board length",
+   "nominal": 69.0,
+   "current": 69.0,
+   "source": "board length (becomes X)",
+   "verify": true
+  },
+  {
+   "key": "ESP_W",
+   "group": "ESP32-S3 board",
+   "label": "Board width",
+   "nominal": 25.5,
+   "current": 25.5,
+   "source": "board width (becomes Z)",
+   "verify": true
+  },
+  {
+   "key": "ESP_T",
+   "group": "ESP32-S3 board",
+   "label": "PCB thickness",
+   "nominal": 1.6,
+   "current": 1.6,
+   "source": "measure on your part",
+   "verify": true
+  },
+  {
+   "key": "ESP_TOP_POP",
+   "group": "ESP32-S3 board",
+   "label": "Tallest part on the top side",
+   "nominal": 3.4,
+   "current": 3.4,
+   "source": "tallest part on top (module shield / USB-C)",
+   "verify": true
+  },
+  {
+   "key": "ESP_HDR_LEN",
+   "group": "ESP32-S3 board",
+   "label": "Header row length",
+   "nominal": 55.88,
+   "current": 55.88,
+   "source": "22 pins x 2.54",
+   "verify": true
+  },
+  {
+   "key": "ESP_HDR_SPACER",
+   "group": "ESP32-S3 board",
+   "label": "Header spacer height",
+   "nominal": 2.5,
+   "current": 2.5,
+   "source": "measure on your part",
+   "verify": true
+  },
+  {
+   "key": "ESP_USB_PROJ",
+   "group": "ESP32-S3 board",
+   "label": "USB-C overhang past the PCB end",
+   "nominal": 1.5,
+   "current": 1.5,
+   "source": "USB-C shell overhang beyond PCB end",
+   "verify": true
+  },
+  {
+   "key": "ESP_BARE_CORNER",
+   "group": "ESP32-S3 board",
+   "label": "Bare corner square",
+   "nominal": 3.0,
+   "current": 3.0,
+   "source": "bare corner square (component side) at all four corners",
+   "verify": true
+  },
+  {
+   "key": "ESP_HDR_OFF_X",
+   "group": "ESP32-S3 board",
+   "label": "Header row offset along the board",
+   "nominal": 0.0,
+   "current": 0.0,
+   "source": "header-row centre minus board centre along the board length",
+   "verify": true
+  },
+  {
+   "key": "ESP_USB_HALF_SPAN",
+   "group": "ESP32-S3 board",
+   "label": "Half the span across the USB-C port(s)",
+   "nominal": 11.0,
+   "current": 11.0,
+   "source": "half-span across the USB-C connector(s) at the USB end",
+   "verify": true
+  },
+  {
+   "key": "USB_PLUG_T",
+   "group": "Wiring",
+   "label": "Programming cable plug thickness",
+   "nominal": 7.0,
+   "current": 7.0,
+   "source": "thickness of YOUR programming cable's USB-C overmold",
+   "verify": true
+  },
+  {
+   "key": "USB_PLUG_W",
+   "group": "Wiring",
+   "label": "Programming cable plug width",
+   "nominal": 12.4,
+   "current": 12.4,
+   "source": "width of YOUR programming cable's USB-C overmold",
+   "verify": true
+  },
+  {
+   "key": "DUPONT_HOUSING_L",
+   "group": "Wiring",
+   "label": "Dupont housing length on the pin",
+   "nominal": 14.0,
+   "current": 14.0,
+   "source": "female housing length measured on YOUR jumpers",
+   "verify": true
+  },
+  {
+   "key": "DUPONT_HOUSING_W",
+   "group": "Wiring",
+   "label": "Dupont housing width",
+   "nominal": 2.6,
+   "current": 2.6,
+   "source": "measure on your part",
+   "verify": true
+  },
+  {
+   "key": "WIRE_STRAIGHT_EXIT",
+   "group": "Wiring",
+   "label": "Straight wire before it can bend",
+   "nominal": 6.0,
+   "current": 6.0,
+   "source": "straight wire after the housing before bending",
+   "verify": true
+  },
+  {
+   "key": "WIRE_BEND_R",
+   "group": "Wiring",
+   "label": "First relaxed bend radius",
+   "nominal": 10.0,
+   "current": 10.0,
+   "source": "first RELAXED bend radius of your jumper bundle",
+   "verify": true
+  },
+  {
+   "key": "WIRE_STRAIN",
+   "group": "Wiring",
+   "label": "Strain-relief allowance",
+   "nominal": 3.0,
+   "current": 3.0,
+   "source": "strain-relief allowance",
+   "verify": false
+  },
+  {
+   "key": "BAT_L",
+   "group": "Battery",
+   "label": "Battery length",
+   "nominal": 69.0,
+   "current": 69.0,
+   "source": "Adafruit #354 reference (becomes Z)",
+   "verify": true
+  },
+  {
+   "key": "BAT_W",
+   "group": "Battery",
+   "label": "Battery width",
+   "nominal": 37.0,
+   "current": 37.0,
+   "source": "(becomes X)",
+   "verify": true
+  },
+  {
+   "key": "BAT_T",
+   "group": "Battery",
+   "label": "Battery thickness",
+   "nominal": 18.0,
+   "current": 18.0,
+   "source": "(becomes Y)",
+   "verify": true
+  },
+  {
+   "key": "CHG_L",
+   "group": "Charger",
+   "label": "Charger length (USB-C axis)",
+   "nominal": 21.0,
+   "current": 21.0,
+   "source": "Adafruit #6106 length along the USB-C axis (X)",
+   "verify": true
+  },
+  {
+   "key": "CHG_W",
+   "group": "Charger",
+   "label": "Charger width",
+   "nominal": 26.0,
+   "current": 26.0,
+   "source": "width (Y)",
+   "verify": true
+  },
+  {
+   "key": "CHG_H",
+   "group": "Charger",
+   "label": "Charger height incl. parts",
+   "nominal": 11.0,
+   "current": 11.0,
+   "source": "PCB + tallest part (terminal block)",
+   "verify": true
+  },
+  {
+   "key": "CHG_BARE_CORNER",
+   "group": "Charger",
+   "label": "Bare square at the front corners",
+   "nominal": 3.0,
+   "current": 3.0,
+   "source": "bare square at the two front PCB corners (both faces)",
+   "verify": true
+  },
+  {
+   "key": "CHG_USB_OFF_Y",
+   "group": "Charger",
+   "label": "USB-C offset from charger centre",
+   "nominal": -6.0,
+   "current": -6.0,
+   "source": "USB-C centre minus board centre along Y",
+   "verify": true
+  },
+  {
+   "key": "BTN_HOLE_D",
+   "group": "Button",
+   "label": "Panel hole diameter",
+   "nominal": 12.5,
+   "current": 12.5,
+   "source": "panel cut-out for the 12 mm latching button",
+   "verify": true
+  },
+  {
+   "key": "BTN_BODY_D",
+   "group": "Button",
+   "label": "Widest body or nut",
+   "nominal": 15.0,
+   "current": 15.0,
+   "source": "largest body/nut diameter behind the panel",
+   "verify": true
+  },
+  {
+   "key": "BTN_DEPTH",
+   "group": "Button",
+   "label": "Depth incl. terminals",
+   "nominal": 22.0,
+   "current": 22.0,
+   "source": "panel inner face to end of terminals + solder",
+   "verify": true
+  },
+  {
+   "key": "M2_HEAD_D",
+   "group": "Hardware",
+   "label": "M2 screw head diameter",
+   "nominal": 3.8,
+   "current": 3.8,
+   "source": "screw head diameter (<= ~4)",
+   "verify": true
+  },
+  {
+   "key": "FOAM_T",
+   "group": "Hardware",
+   "label": "Foam pad thickness",
+   "nominal": 0.8,
+   "current": 0.8,
+   "source": "choose 0.5-1.0 mm non-conductive foam",
+   "verify": false
+  }
+ ],
+ "design": {
+  "BODY_X": 218.0,
+  "BODY_Z": 218.0,
+  "BODY_Y": 118.0,
+  "WALL": 2.8,
+  "REAR_CORNER_R": 32.0,
+  "SIDE_FILLET_R": 28.0,
+  "BOW_START_X": 150.0,
+  "GRIP_HALF_W": 19.0,
+  "GRIP_R": 12.0,
+  "GRIP_OVERLAP": 12.0,
+  "LOOP_X0": 50.0,
+  "LOOP_X1": 148.0,
+  "LOOP_Z0": 30.0,
+  "LOOP_Z1": 78.0,
+  "LOOP_CORNER_R": 20.0,
+  "LOOP_EDGE_R": 4.0,
+  "CAM_AXIS_Z": 172.0,
+  "FAIR_R": 24.0,
+  "FAIR_X0": 150.0,
+  "FAIR_FRONT_X": 206.0,
+  "FAIR_FRONT_FILLET": 8.0,
+  "LENS_RADIAL_GAP": 1.0,
+  "LENS_RECESS": 1.0,
+  "DISP_Z0": 80.0,
+  "DISP_GLASS_GAP": 0.8,
+  "WINDOW_MARGIN": 1.0,
+  "WINDOW_CHAMFER": 1.6,
+  "ESP_CX": 95.0,
+  "ESP_CZ": 140.0,
+  "ESP_WALL_GAP": 2.2,
+  "PROG_CORRIDOR_L": 35.0,
+  "BAT_X0": 152.0,
+  "BAT_Z0": 42.0,
+  "CHG_X0": 3.4,
+  "CHG_Z0": 46.0,
+  "CHG_CY": -5.0,
+  "USB_SLOT_W": 10.5,
+  "USB_SLOT_H": 4.6,
+  "USB_OVERMOLD_W": 13.4,
+  "USB_OVERMOLD_H": 7.6,
+  "USB_OVERMOLD_DEPTH": 2.2,
+  "BTN_Z": 67.0,
+  "BTN_Y": -13.0,
+  "SLOT_EXTRA": 0.2,
+  "EDGE_GAP": 0.3,
+  "JAW_T": 2.4,
+  "CLIP_T": 1.4,
+  "CLIP_HOOK": 0.8,
+  "M2_CLEAR_D": 2.4,
+  "M2_PILOT_D": 1.7,
+  "M2_WELL_D": 4.6,
+  "BOSS_D": 8.0,
+  "SCREW_SEAT_TO_SEAM": 5.0,
+  "SCREW_ENGAGE_TARGET": 6.0,
+  "LIP_H": 1.6,
+  "LIP_T": 1.2,
+  "LIP_CLEAR": 0.2,
+  "ROUTE_R": 5.0,
+  "BED": 256.0,
+  "BED_MARGIN": 10.0
+ },
+ "unverified": 57,
+ "total": 60
+}

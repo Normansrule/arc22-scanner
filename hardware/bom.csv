@@ -1,0 +1,30 @@
+id,category,part,qty,unit,specification,where_to_get,status,notes
+E1,Electronics,ESP32-S3-N16R8 development board,1,pc,"ESP32-S3-WROOM-1-N16R8 module (16 MB flash, 8 MB octal PSRAM), DevKitC-1 header layout, USB-C",search: ESP32-S3-DevKitC-1 N16R8,KEEP,measure your exact board; N16R8 is a memory option not an outline
+E2,Electronics,4.0 in SPI TFT with resistive touch,1,pc,"480x320, ST7796S driver, XPT2046 touch, 14-pin header (MSP4021-style)",search: Hosyond 4.0 inch ST7796S XPT2046,KEEP,no rigid glass over resistive touch
+E3,Electronics,Arducam Mini 2MP Plus (or Mini 2MP) OV2640,1,pc,"SPI + I2C, 8-pin header, S-mount (M12) lens",https://www.arducam.com/arducam-2mp-spi-camera-b0067-arduino.html,KEEP,not an ESP32-CAM / bare OV2640 / Arducam Mega
+P1,Power,Li-ion battery 3.7 V 4400 mAh (protected),1,pc,"1S, built-in protection, JST-PH lead, ~69 x 37 x 18 mm",https://www.adafruit.com/product/354,CANDIDATE,keep factory wrapper and leads
+P2,Power,bq25185 USB/DC/solar charger with 5 V boost,1,pc,"5 V / 1 A boost, EN pin, 6 h charge timer, USB-C",https://www.adafruit.com/product/6106,CANDIDATE,boost stalls if switched on into >~200 mA; test before trusting
+P3,Power,12 mm latching push button,1,pc,"SPST or SPDT, panel hole 12.5 mm, <= 22 mm deep incl. lugs",search: 12mm latching push button self-locking,CANDIDATE,
+P4,Power,JST-XH 2-pin connector pair (RUN pigtail),1,set,"keyed male + female housings with crimps",search: JST-XH 2.54 2 pin connector kit,KEEP,unplug before programming
+W1,Wiring,Dupont jumper wires female-female,40,pc,"2.54 mm, 26 AWG, 10/20 cm, assorted colours",search: dupont jumper wire female to female,KEEP,or crimp your own to the lengths in connections.csv
+W2,Wiring,Stranded silicone wire 22 AWG red + black,1,m each,"for 5 V and ground distribution",search: 22 AWG silicone wire,KEEP,no battery current through breadboard jumper chains
+W3,Wiring,Resistor 10 kOhm 1/4 W,3,pc,"CS pull-ups to 3V3 (TFT CS, touch CS, camera CS)",any electronics supplier,KEEP,
+W4,Wiring,Resistor 4.7 kOhm 1/4 W,2,pc,"I2C pull-ups SDA/SCL to 3V3",any electronics supplier,OPTIONAL,only if the camera has none fitted
+W5,Wiring,Resistor 100 kOhm 1/4 W,1,pc,"backlight pull-down",any electronics supplier,OPTIONAL,only after verifying a backlight driver
+W6,Wiring,Heat-shrink tubing assortment,1,set,"1.5-6 mm, 2:1",any,KEEP,every splice and pull-up tee
+W7,Wiring,Soft removable cable restraints,1,set,"fabric tape or hook-and-loop strap",any,KEEP,never trap a bundle under a rib
+M1,Mechanical,Printed LEFT shell,1,pc,"cad/out/print/stl/ARC22_LEFT_WHITE.stl + ARC22_LEFT_BLUE.stl (one object, two colours)",print it (docs/PRINTING.md),KEEP,
+M2,Mechanical,Printed RIGHT shell,1,pc,"cad/out/print/stl/ARC22_RIGHT_WHITE.stl + ARC22_RIGHT_BLUE.stl (one object, two colours)",print it (docs/PRINTING.md),KEEP,
+M3,Mechanical,Screw M2 x 12 mm,6,pc,"self-tapping into PETG, head <= 4 mm",search: M2x12 self tapping screw,KEEP,no M3 and no heat-set inserts
+M4,Mechanical,Non-conductive foam tape 0.5-1.0 mm,0.1,m2,"EVA or PE, adhesive back; model assumes 0.8 mm",search: EVA foam tape 1mm,KEEP,on every pad and slot jaw
+M5,Mechanical,Fit samples 01-03,1,set,"cad/out/fit_samples/*.stl, single colour",print first,KEEP,test pieces; not installed
+F1,Filament,PETG white,0.65,kg,"body regions (~481 cm3) plus supports",any PETG,KEEP,
+F2,Filament,PETG cyan / blue,0.1,kg,"accent regions (~62 cm3); decorative, not illuminated",any PETG,KEEP,plus purge allowance
+C1,Cables,USB-C cable + 5 V USB charger,1,pc,"charges through the charger board's USB-C",any,KEEP,
+C2,Cables,USB-C data cable,1,pc,"programs the ESP32; measure its overmold (USB_PLUG_T/W)",any,KEEP,
+T1,Tools,Digital calipers,1,pc,,any,KEEP,stage 0 measurements
+T2,Tools,Multimeter,1,pc,,any,KEEP,power commissioning
+T3,Tools,Soldering iron + solder + flux,1,set,,any,KEEP,splices and pull-up tees
+T4,Tools,Crimping tool for Dupont / JST-XH,1,pc,,any,OPTIONAL,if you crimp custom-length leads
+T5,Tools,Slim screwdriver >= 60 mm shaft,1,pc,"<= 4 mm diameter (deep screw wells)",any,KEEP,
+T6,Tools,3D printer with two-filament support,1,pc,"Bambu Lab P1S + AMS (256 mm bed); single-colour printers can print one colour",any,KEEP,

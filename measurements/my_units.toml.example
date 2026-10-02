@@ -1,0 +1,70 @@
+# ARC-22 — YOUR measured values
+# Copy this file to measurements/my_units.toml, replace each number with what YOUR calipers say,
+# then run  bash scripts/rebuild_all.sh . Anything you leave out keeps its nominal VERIFY value
+# and stays listed as unverified in every build. Units: millimetres.
+
+[measured]
+# DISP_PCB_W = 61.74    # VERIFY: MSP4021 reference drawing (short side, becomes Y)
+# DISP_PCB_H = 108.04    # VERIFY: MSP4021 reference drawing (long side, becomes Z)
+# DISP_PCB_T = 1.6    # VERIFY: calipers on bare PCB edge
+# DISP_ACTIVE_W = 55.68    # VERIFY: MSP4021 reference active area
+# DISP_ACTIVE_H = 83.52    # VERIFY: MSP4021 reference active area
+# DISP_ACTIVE_OFF_Z = 4    # VERIFY: active-area centre minus PCB centre, +Z = away from header
+# DISP_ACTIVE_OFF_Y = 0    # VERIFY
+# DISP_GLASS_W = 61    # VERIFY: outer glass/touch-film width
+# DISP_GLASS_H = 97    # VERIFY: outer glass/touch-film height
+# DISP_GLASS_OFF_Z = 2.5    # VERIFY: glass centre minus PCB centre, +Z = away from header
+# DISP_GLASS_STACK = 4.6    # VERIFY: PCB front face to glass front face
+# DISP_BACK_POP = 4    # VERIFY: tallest part on PCB back (SD slot etc.), excluding header
+# DISP_HDR_SPACER = 2.5    # VERIFY: header plastic spacer height on PCB back
+# DISP_HDR_PINS = 14    # VERIFY: pin count of the display header
+# DISP_HDR_INSET = 3    # VERIFY: header row centre distance from its PCB edge
+# DISP_BARE_SIDE = 5    # VERIFY: bare strip width inward from each long PCB edge at the corners
+# DISP_BARE_END_HDR = 6    # VERIFY: bare PCB length at the header end (front face, beyond glass)
+# DISP_BARE_END_FAR = 2.5    # VERIFY: bare PCB length at the far end (front face, beyond glass)
+# CAM_PCB_W = 24.4    # VERIFY: ARC22 assumption (Y)
+# CAM_PCB_H = 34.1    # VERIFY: ARC22 assumption (Z)
+# CAM_PCB_T = 1.6    # VERIFY
+# CAM_HOLDER_SQ = 14.5    # VERIFY: S-mount (M12) holder base square
+# CAM_LENS_D = 14    # VERIFY: lens barrel outer diameter at the front
+# CAM_LENS_PROJ = 20    # VERIFY: PCB front face to lens front
+# CAM_OPT_OFF_Z = 3    # VERIFY: optical centre minus PCB centre, +Z = away from header
+# CAM_OPT_OFF_Y = 0    # VERIFY
+# CAM_BACK_POP = 3    # VERIFY: tallest part on camera PCB back
+# CAM_HDR_INSET = 2    # VERIFY: header row centre distance from bottom PCB edge
+# CAM_BARE_CORNER = 4    # VERIFY: bare square at each PCB corner (no parts, both faces)
+# CAM_HDR_PINS = 8    # Arducam Mini interface: CS MOSI MISO SCLK GND VCC SDA SCL
+# ESP_L = 69    # VERIFY: board length (becomes X)
+# ESP_W = 25.5    # VERIFY: board width (becomes Z)
+# ESP_T = 1.6    # VERIFY
+# ESP_TOP_POP = 3.4    # VERIFY: tallest part on top (module shield / USB-C)
+# ESP_HDR_LEN = 55.88    # VERIFY: 22 pins x 2.54
+# ESP_HDR_SPACER = 2.5    # VERIFY
+# ESP_USB_PROJ = 1.5    # VERIFY: USB-C shell overhang beyond PCB end
+# ESP_BARE_CORNER = 3    # VERIFY: bare corner square (component side) at all four corners
+# ESP_HDR_OFF_X = 0    # VERIFY: header-row centre minus board centre along the board length
+# ESP_USB_HALF_SPAN = 11    # VERIFY: half-span across the USB-C connector(s) at the USB end
+# USB_PLUG_T = 7    # VERIFY: thickness of YOUR programming cable's USB-C overmold
+# USB_PLUG_W = 12.4    # VERIFY: width of YOUR programming cable's USB-C overmold
+# DUPONT_HOUSING_L = 14    # VERIFY: female housing length measured on YOUR jumpers
+# DUPONT_HOUSING_W = 2.6    # VERIFY
+# WIRE_STRAIGHT_EXIT = 6    # VERIFY: straight wire after the housing before bending
+# WIRE_BEND_R = 10    # VERIFY: first RELAXED bend radius of your jumper bundle
+# WIRE_STRAIN = 3    # strain-relief allowance
+# BAT_L = 69    # VERIFY: Adafruit #354 reference (becomes Z)
+# BAT_W = 37    # VERIFY: (becomes X)
+# BAT_T = 18    # VERIFY: (becomes Y)
+# CHG_L = 21    # VERIFY: Adafruit #6106 length along the USB-C axis (X)
+# CHG_W = 26    # VERIFY: width (Y)
+# CHG_H = 11    # VERIFY: PCB + tallest part (terminal block)
+# CHG_BARE_CORNER = 3    # VERIFY: bare square at the two front PCB corners (both faces)
+# CHG_USB_OFF_Y = -6    # VERIFY: USB-C centre minus board centre along Y
+# BTN_HOLE_D = 12.5    # VERIFY: panel cut-out for the 12 mm latching button
+# BTN_BODY_D = 15    # VERIFY: largest body/nut diameter behind the panel
+# BTN_DEPTH = 22    # VERIFY: panel inner face to end of terminals + solder
+# M2_HEAD_D = 3.8    # VERIFY: screw head diameter (<= ~4)
+# FOAM_T = 0.8    # choose 0.5-1.0 mm non-conductive foam
+
+[design]
+# Optional overrides of design choices (see cad/arc22_params.py). Example:
+# ESP_WALL_GAP = 2.2

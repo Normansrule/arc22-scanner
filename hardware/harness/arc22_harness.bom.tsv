@@ -1,0 +1,29 @@
+Id	Description	Qty	Unit	Designators
+1	Connector, 12 mm latching push button (SPST), solder lugs, 2 pins	1		BTN
+2	Connector, 3V3 distribution splice, soldered + heat-shrunk, fed ONLY by the ESP32 3V3 pin, 5 pins	1		B3V3
+3	Connector, 5 V distribution splice, 22 AWG in, soldered + heat-shrunk, 4 pins	1		B5V
+4	Connector, Adafruit #6106 bq25185 charger + 5 V boost, JST-PH battery input, screw terminal 5 V output, EN pad, 6 pins	1		CHG
+5	Connector, Arducam Mini / Mini Plus OV2640 2MP (SPI + I2C), male 2.54 mm header, 8 pins	1		CAM
+6	Connector, ESP32-S3-N16R8 dev board (DevKitC-1 layout), header J1, male 2.54 mm header, pin 22 at the USB end, 22 pins	1		ESP32
+7	Connector, Hosyond 4.0" ST7796S + XPT2046 (MSP4021-style), male 2.54 mm header, 14 pins	1		TFT
+8	Connector, RUN pigtail (removable), keyed 2-pin JST-XH pair; unplug before programming, 2 pins	1		RUN
+9	Connector, Y-splice, shared MOSI, soldered + heat-shrunk, 3 pins	1		YMOSI
+10	Connector, Y-splice, shared SCK, soldered + heat-shrunk, 3 pins	1		YSCK
+11	Connector, ground distribution splice, 22 AWG in, soldered + heat-shrunk, 4 pins	1		BGND
+12	Connector, protected 1S 3.7 V 4400 mAh Li-ion (Adafruit #354), factory JST-PH 2-pin lead, 2 pins	1		BAT
+13	Connector, pull-up tee, TFT CS, 10 kOhm to 3V3, soldered + heat-shrunk, 3 pins	1		PU1
+14	Connector, pull-up tee, camera CS, 10 kOhm to 3V3, soldered + heat-shrunk, 3 pins	1		PU3
+15	Connector, pull-up tee, touch T_CS, 10 kOhm to 3V3, soldered + heat-shrunk, 3 pins	1		PU2
+16	Wire, BK	0	m	W_camera, W_display, W_esp32, W_power
+17	Wire, BN	0	m	W_camera
+18	Wire, BU	0	m	W_camera, W_display
+19	Wire, GN	0	m	W_camera, W_display
+20	Wire, GY	0	m	W_display
+21	Wire, LB	0	m	W_display
+22	Wire, OG	0	m	W_camera, W_display, W_esp32
+23	Wire, PK	0	m	W_display
+24	Wire, RD	0	m	W_display, W_esp32, W_power
+25	Wire, TQ	0	m	W_display
+26	Wire, VT	0	m	W_camera, W_display
+27	Wire, WH	0	m	W_camera, W_display, W_power
+28	Wire, YE	0	m	W_camera, W_display

@@ -1,0 +1,17 @@
+# ARC-22 materials — keep this file next to its OBJ
+newmtl ARC22_WHITE
+Kd 0.950 0.960 0.970
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+Ns 20
+d 1
+illum 2
+
+newmtl ARC22_BLUE
+Kd 0.100 0.620 0.860
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+Ns 20
+d 1
+illum 2
+

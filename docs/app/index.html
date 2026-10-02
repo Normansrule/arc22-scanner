@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ARC-22 Studio</title>
+<meta name="description" content="Inspect the ARC-22 scanner model, enter your measurements, follow the wiring and track the build — online or installed.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'">
+<meta name="theme-color" content="#17303d">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="studio.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell">
+  <nav class="rail" aria-label="Views">
+    <div class="brand">
+      <img src="icons/icon-192.png" alt="" width="36" height="36">
+      <span>ARC-22<small>Studio</small></span>
+    </div>
+    <button class="nav" data-view="model" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7.5v9L12 21l8-4.5v-9Zm0 0v18m-8-13.5 8 4.5 8-4.5"/></svg>Model</button>
+    <button class="nav" data-view="measure"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15 15 3l6 6L9 21Zm4-4 2 2m1-5 2 2m1-5 2 2"/></svg>Measure</button>
+    <button class="nav" data-view="wiring"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v6a4 4 0 0 0 4 4h6a4 4 0 0 1 4 4v2M5 4h0M19 20h0"/><circle cx="5" cy="4" r="2"/><circle cx="19" cy="20" r="2"/></svg>Wiring</button>
+    <button class="nav" data-view="build"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h2m4 0h10M4 12h2m4 0h10M4 18h2m4 0h10"/></svg>Build</button>
+    <button class="nav" data-view="checks"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Checks</button>
+    <div class="rail-foot">
+      <button id="install" class="ghost" hidden>Install app</button>
+      <a id="docs-link" class="ghost" href="../index.html" hidden>Build guide</a>
+    </div>
+  </nav>
+
+  <main id="main" tabindex="-1">
+    <!-- MODEL -->
+    <section class="view" id="view-model" aria-labelledby="h-model">
+      <div class="stage">
+        <canvas id="viewport" aria-label="3D model of the ARC-22 scanner. Drag to orbit, scroll to zoom."></canvas>
+        <p class="hint" id="hover-label" aria-live="polite"></p>
+        <p class="loading" id="loading">Loading the model…</p>
+      </div>
+      <aside class="sheet" aria-label="Model controls">
+        <h1 id="h-model">Does it close with the wires in?</h1>
+        <p class="lede">Lower the right shell onto the fully wired left half. The amber volumes are space kept free for plugged connectors, wire bends and strain relief.</p>
+
+        <div class="closer">
+          <label for="close">Right shell above its seat</label>
+          <output id="close-out" for="close">80 mm</output>
+          <input type="range" id="close" min="0" max="80" step="1" value="80">
+          <p class="verdict" id="close-verdict"></p>
+        </div>
+
+        <fieldset class="layers">
+          <legend>Show</legend>
+          <label><input type="checkbox" data-layer="LEFT" checked> Left shell</label>
+          <label><input type="checkbox" data-layer="RIGHT" checked> Right shell</label>
+          <label><input type="checkbox" data-layer="modules" checked> Electronics</label>
+          <label class="amber"><input type="checkbox" data-layer="fields" checked> Reserved space</label>
+          <label class="route"><input type="checkbox" data-layer="routes" checked> Cable routes</label>
+        </fieldset>
+
+        <div class="views" role="group" aria-label="Camera">
+          <button data-cam="front">Front</button>
+          <button data-cam="rear">Rear</button>
+          <button data-cam="inside">Inside left</button>
+          <button data-cam="top">Top</button>
+        </div>
+        <p class="small" id="model-facts"></p>
+      </aside>
+    </section>
+
+    <!-- MEASURE -->
+    <section class="view" id="view-measure" aria-labelledby="h-measure" hidden>
+      <header class="page-head">
+        <h1 id="h-measure">Your measurements</h1>
+        <p class="lede">A family name is not a dimension. Measure your own parts with calipers, type the numbers here, and download <code>my_units.toml</code> into <code>measurements/</code> before rebuilding.</p>
+        <div class="progress"><span id="m-count"></span><div class="bar"><i id="m-bar"></i></div></div>
+        <div class="actions">
+          <button id="m-download" class="primary">Download my_units.toml</button>
+          <button id="m-copy">Copy</button>
+          <label class="file">Load a my_units.toml<input type="file" id="m-load" accept=".toml,text/plain"></label>
+          <button id="m-clear" class="quiet">Clear my values</button>
+        </div>
+        <p class="status" id="m-status" role="status"></p>
+      </header>
+      <div id="m-groups"></div>
+    </section>
+
+    <!-- WIRING -->
+    <section class="view" id="view-wiring" aria-labelledby="h-wiring" hidden>
+      <header class="page-head">
+        <h1 id="h-wiring">Wiring</h1>
+        <p class="lede">Every ESP32-S3 pin is 3.3 V logic. Never connect a 5 V signal to it. Check each label against the silkscreen of your own board.</p>
+      </header>
+      <div class="two">
+        <div>
+          <h2>Signals</h2>
+          <table class="pins" id="pin-table"><thead><tr><th scope="col">GPIO</th><th scope="col">Signal</th><th scope="col">Note</th></tr></thead><tbody></tbody></table>
+          <p class="small">10 kΩ pull-ups to 3V3 on TFT CS, touch CS and camera CS. Leave TFT MISO and the SD pins unconnected. The camera needs both SPI and I2C.</p>
+        </div>
+        <div>
+          <h2>Power path</h2>
+          <ol class="power">
+            <li><b>Battery</b> protected 1S 4400 mAh, factory leads → charger battery JST</li>
+            <li><b>Charger 5V+</b> → removable RUN pigtail → system 5 V → ESP32 5V and verified 5 V-tolerant module supplies</li>
+            <li><b>Charger GND</b> → common ground for every module</li>
+            <li><b>Charger EN</b> → latching button → GND. Closed turns the 5 V output off, open turns it on. This is the charger enable, not the ESP32 reset.</li>
+          </ol>
+          <h2>Before you plug in the computer</h2>
+          <ol class="seq">
+            <li>Switch off with the button</li>
+            <li>Unplug the charging USB-C</li>
+            <li>Unplug the RUN pigtail</li>
+            <li>Connect the computer to the ESP32 USB-C</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILD -->
+    <section class="view" id="view-build" aria-labelledby="h-build" hidden>
+      <header class="page-head">
+        <h1 id="h-build">Build progress</h1>
+        <p class="lede">Work through the stages in order. Mark each one PASS, FIX or STOP and keep notes; download them to update <code>docs/VALIDATION.md</code>.</p>
+        <div class="actions">
+          <button id="b-download" class="primary">Download progress notes</button>
+          <button id="b-clear" class="quiet">Reset progress</button>
+        </div>
+      </header>
+      <ol class="stages" id="stages"></ol>
+    </section>
+
+    <!-- CHECKS -->
+    <section class="view" id="view-checks" aria-labelledby="h-checks" hidden>
+      <header class="page-head">
+        <h1 id="h-checks">Recorded CAD checks</h1>
+        <p class="lede" id="c-lede"></p>
+        <label class="toggle"><input type="checkbox" id="c-fails"> Show only failures</label>
+      </header>
+      <div id="c-groups"></div>
+    </section>
+  </main>
+</div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

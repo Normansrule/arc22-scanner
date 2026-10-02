@@ -1,0 +1,704 @@
+{
+  "summary": {
+    "total": 99,
+    "passed": 99,
+    "failed": 0,
+    "unverified_measurements": 57,
+    "seconds": 106.0
+  },
+  "checks": [
+    {
+      "group": "envelope",
+      "item": "bounds X\u00d7Y\u00d7Z (front-back \u00d7 width \u00d7 height)",
+      "result": "PASS",
+      "value": "218.0 \u00d7 118.0 \u00d7 218.0 mm",
+      "note": "ARC22 target ~218 \u00d7 118 \u00d7 218"
+    },
+    {
+      "group": "envelope",
+      "item": "LEFT one solid, valid",
+      "result": "PASS",
+      "value": "1 solid(s)",
+      "note": ""
+    },
+    {
+      "group": "printer",
+      "item": "LEFT on P1S bed (exterior down)",
+      "result": "PASS",
+      "value": "footprint 218.0 \u00d7 218.0, height 60.6 mm",
+      "note": "bed 256\u00b3 minus 10 mm margin for brim/purge/exclusions"
+    },
+    {
+      "group": "envelope",
+      "item": "RIGHT one solid, valid",
+      "result": "PASS",
+      "value": "1 solid(s)",
+      "note": ""
+    },
+    {
+      "group": "printer",
+      "item": "RIGHT on P1S bed (exterior down)",
+      "result": "PASS",
+      "value": "footprint 218.0 \u00d7 218.0, height 59.0 mm",
+      "note": "bed 256\u00b3 minus 10 mm margin for brim/purge/exclusions"
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "battery.pack",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "button.body",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "button.cap",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "camera.back_parts",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "camera.header",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "camera.holder",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "camera.lens",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "camera.pcb",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "camera.plugs",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "charger.parts_bottom",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "charger.parts_top",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "charger.pcb",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "charger.usb_c",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "display.back_parts",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "display.glass",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "display.header",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "display.pcb",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "display.plugs",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "esp32.header_hi",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "esp32.header_lo",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "esp32.pcb",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "esp32.plugs_hi",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "esp32.plugs_lo",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "esp32.top_parts",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "esp32.top_parts_mid",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "hard parts vs shells",
+      "item": "esp32.usb",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": ""
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "battery.leads",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "button.leads",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "camera.lens_air",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "camera.open_back",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "camera.wires_back_bend",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "camera.wires_back_near",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "camera.wires_down",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "charger.plug_metal_air",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "charger.plug_overmold_air",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "charger.wires",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "display.far_pins",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "display.glass_air",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "display.hdr_wires_bend",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "display.hdr_wires_near",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "display.open_back",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "esp32.prog_exit",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "esp32.prog_usb",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "esp32.wires_bend",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "esp32.wires_near_hi",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "reserved fields vs shells",
+      "item": "esp32.wires_near_lo",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "wire/air space stays free of plastic"
+    },
+    {
+      "group": "module-to-module room",
+      "item": "battery \u2194 button",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "hard parts never sit in another module's wire field"
+    },
+    {
+      "group": "module-to-module room",
+      "item": "battery \u2194 camera",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "hard parts never sit in another module's wire field"
+    },
+    {
+      "group": "module-to-module room",
+      "item": "battery \u2194 charger",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "hard parts never sit in another module's wire field"
+    },
+    {
+      "group": "module-to-module room",
+      "item": "battery \u2194 display",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "hard parts never sit in another module's wire field"
+    },
+    {
+      "group": "module-to-module room",
+      "item": "battery \u2194 esp32",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "hard parts never sit in another module's wire field"
+    },
+    {
+      "group": "module-to-module room",
+      "item": "button \u2194 camera",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "hard parts never sit in another module's wire field"
+    },
+    {
+      "group": "module-to-module room",
+      "item": "button \u2194 charger",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "hard parts never sit in another module's wire field"
+    },
+    {
+      "group": "module-to-module room",
+      "item": "button \u2194 display",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "hard parts never sit in another module's wire field"
+    },
+    {
+      "group": "module-to-module room",
+      "item": "button \u2194 esp32",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "hard parts never sit in another module's wire field"
+    },
+    {
+      "group": "module-to-module room",
+      "item": "camera \u2194 charger",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "hard parts never sit in another module's wire field"
+    },
+    {
+      "group": "module-to-module room",
+      "item": "camera \u2194 display",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "hard parts never sit in another module's wire field"
+    },
+    {
+      "group": "module-to-module room",
+      "item": "camera \u2194 esp32",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "hard parts never sit in another module's wire field"
+    },
+    {
+      "group": "module-to-module room",
+      "item": "charger \u2194 display",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "hard parts never sit in another module's wire field"
+    },
+    {
+      "group": "module-to-module room",
+      "item": "charger \u2194 esp32",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "hard parts never sit in another module's wire field"
+    },
+    {
+      "group": "module-to-module room",
+      "item": "display \u2194 esp32",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "hard parts never sit in another module's wire field"
+    },
+    {
+      "group": "insertion path (swept)",
+      "item": "battery",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "path (+0,+80,+0) \u2192 (+0,+0,+0) mm into the LEFT shell (plugs fitted), checked every 1 mm"
+    },
+    {
+      "group": "insertion path (swept)",
+      "item": "button",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "path (+6,+80,+0) \u2192 (+6,+0,+0) \u2192 (+0,+0,+0) mm into the LEFT shell (plugs fitted), checked every 1 mm"
+    },
+    {
+      "group": "insertion path (swept)",
+      "item": "camera",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "path (+0,+80,+0) \u2192 (+0,+0,+0) mm into the LEFT shell (plugs fitted), checked every 1 mm"
+    },
+    {
+      "group": "insertion path (swept)",
+      "item": "charger",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "path (+0,+80,+0) \u2192 (+0,+0,+0) mm into the LEFT shell (plugs fitted), checked every 1 mm"
+    },
+    {
+      "group": "insertion path (swept)",
+      "item": "display",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "path (+0,+80,+0) \u2192 (+0,+0,+0) mm into the LEFT shell (plugs fitted), checked every 1 mm"
+    },
+    {
+      "group": "insertion path (swept)",
+      "item": "esp32",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "path (+0,+80,+0) \u2192 (+0,+0,+0) mm into the LEFT shell (plugs fitted), checked every 1 mm; snap clips engage up to 6.9 mm\u00b3 (intended, hook 0.8 mm)"
+    },
+    {
+      "group": "closing swept volume",
+      "item": "RIGHT shell descending onto fully wired LEFT half",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "includes plugged housings, wire fields and cable routes; checked every 1 mm"
+    },
+    {
+      "group": "closing swept volume",
+      "item": "RIGHT shell at final position vs installed stack",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "halves meet with no module pressure \u2192 close by hand before screws"
+    },
+    {
+      "group": "cable routes",
+      "item": "camera_to_esp32 inside cavity",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3 plastic",
+      "note": ""
+    },
+    {
+      "group": "cable routes",
+      "item": "camera_to_esp32 clear of hard parts",
+      "result": "PASS",
+      "value": "0.0 mm\u00b3",
+      "note": "ends touch the header/plug zone by design (\u2264 50 mm\u00b3 allowed)"
+    },
+    {
+      "group": "cable routes",
+      "item": "esp32_to_display inside cavity",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3 plastic",
+      "note": ""
+    },
+    {
+      "group": "cable routes",
+      "item": "esp32_to_display clear of hard parts",
+      "result": "PASS",
+      "value": "12.9 mm\u00b3",
+      "note": "ends touch the header/plug zone by design (\u2264 50 mm\u00b3 allowed)"
+    },
+    {
+      "group": "cable routes",
+      "item": "power_trunk_to_charger inside cavity",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3 plastic",
+      "note": ""
+    },
+    {
+      "group": "cable routes",
+      "item": "power_trunk_to_charger clear of hard parts",
+      "result": "PASS",
+      "value": "0.5 mm\u00b3",
+      "note": "ends touch the header/plug zone by design (\u2264 50 mm\u00b3 allowed)"
+    },
+    {
+      "group": "cable routes",
+      "item": "battery_to_charger inside cavity",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3 plastic",
+      "note": ""
+    },
+    {
+      "group": "cable routes",
+      "item": "battery_to_charger clear of hard parts",
+      "result": "PASS",
+      "value": "0.0 mm\u00b3",
+      "note": "ends touch the header/plug zone by design (\u2264 50 mm\u00b3 allowed)"
+    },
+    {
+      "group": "cable routes",
+      "item": "button_to_charger inside cavity",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3 plastic",
+      "note": ""
+    },
+    {
+      "group": "cable routes",
+      "item": "button_to_charger clear of hard parts",
+      "result": "PASS",
+      "value": "0.0 mm\u00b3",
+      "note": "ends touch the header/plug zone by design (\u2264 50 mm\u00b3 allowed)"
+    },
+    {
+      "group": "hand loop",
+      "item": "loop opening never reaches the electronics cavity",
+      "result": "PASS",
+      "value": "0.00 mm\u00b3",
+      "note": "loop wall 2.8 mm all round"
+    },
+    {
+      "group": "screws",
+      "item": "S1_rear_top boss clear of every module",
+      "result": "PASS",
+      "value": "12.2 mm gap",
+      "note": "screws clamp shell to shell only \u2014 never a module"
+    },
+    {
+      "group": "screws",
+      "item": "S1_rear_top pilot stays blind (left skin \u2265 1.0 mm)",
+      "result": "PASS",
+      "value": "skin 45.42 mm, M2\u00d712, engagement 7 mm, well 49.42 mm deep",
+      "note": ""
+    },
+    {
+      "group": "screws",
+      "item": "S2_top_mid boss clear of every module",
+      "result": "PASS",
+      "value": "45.2 mm gap",
+      "note": "screws clamp shell to shell only \u2014 never a module"
+    },
+    {
+      "group": "screws",
+      "item": "S2_top_mid pilot stays blind (left skin \u2265 1.0 mm)",
+      "result": "PASS",
+      "value": "skin 48.83 mm, M2\u00d712, engagement 7 mm, well 52.83 mm deep",
+      "note": ""
+    },
+    {
+      "group": "screws",
+      "item": "S3_bow boss clear of every module",
+      "result": "PASS",
+      "value": "12.6 mm gap",
+      "note": "screws clamp shell to shell only \u2014 never a module"
+    },
+    {
+      "group": "screws",
+      "item": "S3_bow pilot stays blind (left skin \u2265 1.0 mm)",
+      "result": "PASS",
+      "value": "skin 49.84 mm, M2\u00d712, engagement 7 mm, well 53.84 mm deep",
+      "note": ""
+    },
+    {
+      "group": "screws",
+      "item": "S4_front_low boss clear of every module",
+      "result": "PASS",
+      "value": "9.0 mm gap",
+      "note": "screws clamp shell to shell only \u2014 never a module"
+    },
+    {
+      "group": "screws",
+      "item": "S4_front_low pilot stays blind (left skin \u2265 1.0 mm)",
+      "result": "PASS",
+      "value": "skin 49.5 mm, M2\u00d712, engagement 7 mm, well 53.5 mm deep",
+      "note": ""
+    },
+    {
+      "group": "screws",
+      "item": "S5_rear_low boss clear of every module",
+      "result": "PASS",
+      "value": "22.5 mm gap",
+      "note": "screws clamp shell to shell only \u2014 never a module"
+    },
+    {
+      "group": "screws",
+      "item": "S5_rear_low pilot stays blind (left skin \u2265 1.0 mm)",
+      "result": "PASS",
+      "value": "skin 47.05 mm, M2\u00d712, engagement 7 mm, well 51.05 mm deep",
+      "note": ""
+    },
+    {
+      "group": "screws",
+      "item": "S6_grip boss clear of every module",
+      "result": "PASS",
+      "value": "55.1 mm gap",
+      "note": "screws clamp shell to shell only \u2014 never a module"
+    },
+    {
+      "group": "screws",
+      "item": "S6_grip pilot stays blind (left skin \u2265 1.0 mm)",
+      "result": "PASS",
+      "value": "skin 10.0 mm, M2\u00d712, engagement 7 mm, well 14.0 mm deep",
+      "note": ""
+    },
+    {
+      "group": "two-colour regions",
+      "item": "LEFT: WHITE + BLUE = shell, no overlap",
+      "result": "PASS",
+      "value": "white 243.8 cm\u00b3, blue 31.0 cm\u00b3, \u0394 0.082 %, overlap 0.00 mm\u00b3",
+      "note": "same assembly coordinates \u2192 identical per-shell print transform"
+    },
+    {
+      "group": "two-colour regions",
+      "item": "RIGHT: WHITE + BLUE = shell, no overlap",
+      "result": "PASS",
+      "value": "white 236.9 cm\u00b3, blue 30.5 cm\u00b3, \u0394 0.002 %, overlap 0.00 mm\u00b3",
+      "note": "same assembly coordinates \u2192 identical per-shell print transform"
+    }
+  ]
+}
