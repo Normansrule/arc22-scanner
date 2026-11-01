@@ -21,7 +21,7 @@
     "dist:mac": "node copy-web.js && electron-builder --mac dmg zip --publish never"
   },
   "devDependencies": {
-    "electron": "44.5.1",
+    "electron": "45.1.0",
     "electron-builder": "26.15.3"
   },
   "build": {
